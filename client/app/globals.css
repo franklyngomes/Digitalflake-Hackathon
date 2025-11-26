@@ -3,8 +3,6 @@
 
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --primary:#662671;
   --body-font: 16px;
   --heading-font:24px;
@@ -12,8 +10,6 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-gray:var(--body-gray);
   --text-body: var(--body-font);
@@ -28,8 +24,6 @@
 }
 
 html,body {
-  background: var(--background);
-  color: var(--foreground);
   font-family:  "Poppins", sans-serif;
   padding: 0;
   margin: 0;

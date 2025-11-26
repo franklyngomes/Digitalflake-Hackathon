@@ -8,8 +8,12 @@ const Provider = ({ children }: { children: ReactNode }) => {
     <div className=''>
       <Header />
       <div className='flex h-screen'>
-        <Sidebar />
-        {children}
+        <div className='max-w-[15%] w-full'>
+          <Sidebar />
+        </div>
+        <div className='max-w-[85%] w-full'>
+          {children}
+        </div>
       </div>
     </div>
   )
