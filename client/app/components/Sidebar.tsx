@@ -35,7 +35,7 @@ const Sidebar = () => {
     }
   },[pathname])
   return (
-    <div className='bg-[#F4F4F4] h-[calc(100vh-70px)] py-4'>
+    <div className='bg-[#F4F4F4] h-screen py-4'>
       <ul>
         {options.map((item, index) => (
           <li key={index} className={`mb-3 transition-all ease-in-out hover:bg-[#FFF8B7] ${activeTab === item.link ? "bg-[#FFF8B7]" : ""}`}>

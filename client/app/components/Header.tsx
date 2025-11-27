@@ -17,7 +17,7 @@ const Header = () => {
         <Link href={"/"}>
           <Image src={"/images/transparent-logo.png"} width={200} height={60} alt='Logo' />
         </Link>
-        <div className='flex justify-content-center items-center gap-3'>
+        <div className='flex justify-content-center items-center gap-3 text-white'>
           <Image src={"/images/user.png"} width={30} height={30} alt='user' onClick={() => setShowModal(true)}/>
           <h5>User</h5>
         </div>

@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-table";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import Link from 'next/link';
 
 interface Row {
   id: number;
@@ -92,7 +93,10 @@ const Products = () => {
   }, [])
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-6">Product List</h2>
+      <div className="flex flex-col md:flex-row  md:justify-between items-center mb-10 gap-3">
+        <h2 className="text-2xl font-semibold">Product List</h2>
+        <Link href="/product/add"><button className="rounded-lg bg-primary px-6 py-2 cursor-pointer font-semibold text-white hover:bg-primary/90">Add New</button></Link>
+      </div>
       {
         loading ? <div className="flex justify-center m-auto">Loading...</div> :
           <div className="border border-gray-200 bg-white">

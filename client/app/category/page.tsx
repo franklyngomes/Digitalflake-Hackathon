@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-table";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import Link from "next/link";
 
 interface Row {
   id: number;
@@ -93,45 +94,48 @@ const Category = () => {
   }, [])
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-6">Category List</h2>
+      <div className="flex flex-col md:flex-row  md:justify-between items-center mb-10 gap-3">
+        <h2 className="text-2xl font-semibold">Category List</h2>
+        <Link href="/category/add"><button className="rounded-lg bg-primary px-6 py-2 cursor-pointer font-semibold text-white hover:bg-primary/90">Add New</button></Link>
+      </div>
       {
         loading ? <div className="flex justify-center m-auto">Loading...</div> :
           <div className="border border-gray-200 bg-white">
             <div className="overflow-x-auto max-w-full">
-            <table className="min-w-max border-collapse w-full">
-              <thead className="bg-[#FFF8B7]">
-                {table.getHeaderGroups().map((headerGroup) => (
-                  <tr key={headerGroup.id} className="h-14 mb-2">
-                    {headerGroup.headers.map((header) => (
-                      <th
-                        key={header.id}
-                        className="text-left px-5 font-semibold text-gray-700"
-                      >
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                      </th>
-                    ))}
-                  </tr>
-                ))}
-              </thead>
+              <table className="min-w-max border-collapse w-full">
+                <thead className="bg-[#FFF8B7]">
+                  {table.getHeaderGroups().map((headerGroup) => (
+                    <tr key={headerGroup.id} className="h-14 mb-2">
+                      {headerGroup.headers.map((header) => (
+                        <th
+                          key={header.id}
+                          className="text-left px-5 font-semibold text-gray-700"
+                        >
+                          {flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                        </th>
+                      ))}
+                    </tr>
+                  ))}
+                </thead>
 
-              <tbody>
-                {table.getRowModel().rows.map((row) => (
-                  <tr
-                    key={row.id}
-                    className="bg-[#F5F5F5] my-3 h-16 rounded-lg"
-                  >
-                    {row.getVisibleCells().map((cell) => (
-                      <td key={cell.id} className="px-5 py-3">
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                <tbody>
+                  {table.getRowModel().rows.map((row) => (
+                    <tr
+                      key={row.id}
+                      className="bg-[#F5F5F5] my-3 h-16 rounded-lg"
+                    >
+                      {row.getVisibleCells().map((cell) => (
+                        <td key={cell.id} className="px-5 py-3">
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
       }
